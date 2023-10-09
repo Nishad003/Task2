@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+header{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h1{
+ color: rgb(14, 14, 15);
+}
+
+.c-button{
+  text-align: center;
+  margin-top: 6em;
+}
+
+.button-color{
+
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+        
+          
+.button-color:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+input[type="number"]{
+  width: 200px;
+  padding: 10px;
+  border-color:blue;
+  border-radius: 5px;
+
+}
+
+input[type="number"]:hover{
+  border-color:red;
+}
+
+.sum-button{
+
+  background-color: #f6fbfe;
+  color: #000000;
+  border:2px solid blue;
+  border-radius:  5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.sum-button:hover{
+  
+  background-color: blue;
+  color: rgb(255, 251, 251);
+  border: none;
+}
+.add-form{
+  text-align: center;
+  margin-top: 6em;
+}
+</style>
+<body>
+  <header>
+    <h1>Cognifyz Intership</h1>
+  </header>
+  <div class="c-button">
+  <button class="button-color" id="myButton">Click Me</button>
+  </div>
+
+<br></br>
+<div class="add-form">
+  <input type="number" id="num1">
+  <input type="number" id="num2">
+  <button class="sum-button" onclick="addNumbers()">Add</button>
+  <p id="result"></p>
+</div>
+<script>
+  var button = document.getElementById("myButton");
+
+button.addEventListener("click", function() {
+  var colors = ["blue", "red", "green", "yellow", "pink", "orange", "skyblue", "purpul" ]; // Add more colors if needed
+  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  button.style.backgroundColor = randomColor;
+});
+
+
+  var currentTime = new Date();
+var currentHour = currentTime.getHours();
+
+var greeting;
+
+if (currentHour < 12) {
+  greeting = "Good morning!";
+} else if (currentHour < 18) {
+  greeting = "Good afternoon!";
+} else {
+  greeting = "Good evening!";
+}
+
+alert(greeting);
+
+
+function addNumbers() {
+    var num1 = parseInt(document.getElementById("num1").value);
+    var num2 = parseInt(document.getElementById("num2").value);
+    var sum = num1 + num2;
+    document.getElementById("result").innerText = "Result: " + sum;
+  }
+</script>
+
+
+</body>
+</html>
